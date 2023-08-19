@@ -1,0 +1,10 @@
+.font-sans {
+  font-family: "Work Sans", sans-serif;
+}
+:root {
+  --main-color: #e527b2;
+}
+
+.main-color {
+  color: var(--main-color);
+}
