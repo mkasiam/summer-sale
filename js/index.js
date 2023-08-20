@@ -14,9 +14,9 @@ function handleCLik(target) {
   const applyButton = document.getElementById("apply-button");
   const cartTotal = total;
   if (cartTotal >= 200) {
-      applyButton.disabled = false;
+    applyButton.disabled = false;
   } else {
-      applyButton.disabled = true;
+    applyButton.disabled = true;
   }
   // Event listener for apply button click
   applyButton.addEventListener("click", function () {
@@ -30,4 +30,22 @@ function handleCLik(target) {
       document.getElementById("grand-total").innerText = grandTotal;
     }
   });
-};
+}
+const purchaseButton = document.getElementById("purchaseButton");
+const modal = document.getElementById("modal");
+const homeButton = document.getElementById("homeButton");
+
+// Show modal on Purchase button click
+purchaseButton.addEventListener("click", function () {
+  modal.classList.remove("hidden");
+});
+
+// Reset modal content on Home button click
+homeButton.addEventListener("click", function () {
+  modal.classList.add("hidden");
+  document.getElementById("selected-products").innerText= " ";
+  document.getElementById("total-price").innerText = 0;
+  document.getElementById("discount").innerText = 0;
+  document.getElementById("grand-total").innerText = 0;
+
+});

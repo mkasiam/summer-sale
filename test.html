@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Enable Button Example</title>
+    <title>Modal Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+    />
   </head>
   <body>
-    <p>Cart Total: $<span id="cartTotal">190</span></p>
-    <button id="applyButton" disabled>Apply</button>
+    <button
+      id="purchaseButton"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Purchase
+    </button>
+
+    <div
+      id="modal"
+      class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center"
+    >
+      <div class="bg-white p-8 rounded shadow-lg">
+        <img src="./images/congo.png" alt="Modal Image" class="mb-4" />
+        <p class="mb-4">Congratulation</p>
+        <p class="mb-4">You purchase the Product</p>
+        <button
+          id="homeButton"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Home
+        </button>
+      </div>
+    </div>
 
     <script>
-      const cartTotalElement = document.getElementById("cartTotal");
-      const applyButton = document.getElementById("applyButton");
+      const purchaseButton = document.getElementById("purchaseButton");
+      const modal = document.getElementById("modal");
+      const homeButton = document.getElementById("homeButton");
 
-      // Get the cart total from the HTML element
-      const cartTotal = parseFloat(cartTotalElement.textContent);
+      // Show modal on Purchase button click
+      purchaseButton.addEventListener("click", function () {
+        modal.classList.remove("hidden");
+      });
 
-      // Enable the button if cart total is >= 200
-      if (cartTotal >= 200) {
-        applyButton.disabled = false;
-      }
+      // Reset modal content on Home button click
+      homeButton.addEventListener("click", function () {
+        modal.classList.add("hidden");
+      });
     </script>
   </body>
 </html>
