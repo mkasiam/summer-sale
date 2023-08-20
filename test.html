@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enable Button Example</title>
+  </head>
+  <body>
+    <p>Cart Total: $<span id="cartTotal">190</span></p>
+    <button id="applyButton" disabled>Apply</button>
+
+    <script>
+      const cartTotalElement = document.getElementById("cartTotal");
+      const applyButton = document.getElementById("applyButton");
+
+      // Get the cart total from the HTML element
+      const cartTotal = parseFloat(cartTotalElement.textContent);
+
+      // Enable the button if cart total is >= 200
+      if (cartTotal >= 200) {
+        applyButton.disabled = false;
+      }
+    </script>
+  </body>
+</html>
