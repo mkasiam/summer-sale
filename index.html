@@ -60,7 +60,9 @@
     </header>
     <main>
       <!-- Products & Cart Section  -->
-      <section class="flex flex-col lg:flex-row max-w-screen-xl mx-auto">
+      <section
+        class="flex mt-7 gap-5 flex-col lg:flex-row max-w-screen-xl mx-auto"
+      >
         <!-- Card Container  -->
         <div class="w-3/4">
           <!-- Kitchenware Products Section -->
@@ -453,11 +455,10 @@
           </section>
         </div>
         <!-- Cart Container -->
-        <div class="w-1/4">
-          <div>
+        <div class="w-1/4 space-y-1">
+          <div class="bg-[#FFF] rounded-xl space-y-2 p-5">
             <p class="text-2xl font-bold">Have coupon?</p>
-          </div>
-          <div>
+
             <div class="join outline-0 rounded-lg">
               <input
                 id="coupon-code"
@@ -473,41 +474,50 @@
               </button>
             </div>
           </div>
-          <div id="selected-products"></div>
-          <hr color="black" width="50%" />
-          <div>
+          <div
+            id="selected-products"
+            class="bg-[#FFF] rounded-xl space-y-2 p-5"
+          ></div>
+          <hr color="black" />
+          <div class="bg-[#FFF] rounded-xl space-y-2 p-5">
             <p class="text-[#111] font-bold">
               Total Price :
               <span id="total-price" class="text-[#11111180]">00</span>
               <span class="text-[#11111180]">TK</span>
             </p>
             <p class="text-[#111] font-bold">
-              Discount : <span id="discount" class="text-[#11111180]">00</span>
+              Discount :
+              <span id="discount" class="text-[#11111180]">00</span>
               <span class="text-[#11111180]">TK</span>
             </p>
             <p class="text-[#111] font-bold">
-              Price : <span id="grand-total" class="text-[#11111180]">00</span>
+              Price :
+              <span id="grand-total" class="text-[#11111180]">00</span>
               <span class="text-[#11111180]">TK</span>
             </p>
           </div>
-          <hr color="black" width="50%" />
+          <hr color="black" />
           <button
             id="purchaseButton"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            class="bg-[#E527B2] font-semibold text-white text-2xl py-2 rounded-lg w-full mt-4"
           >
             Purchase
           </button>
           <div
             id="modal"
-            class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center"
+            class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center p-10 text-center"
           >
             <div class="bg-white p-8 rounded shadow-lg">
-              <img src="./images/congo.png" alt="Modal Image" class="mb-4" />
-              <p class="mb-4">Congratulation</p>
-              <p class="mb-4">You purchase the Product</p>
+              <div class="flex justify-center">
+                <img src="./images/congo.png" alt="Modal Image" class="mb-4" />
+              </div>
+              <p class="mb-4 text-5xl font-bold">Congratulation</p>
+              <p class="mb-4 text-2xl text-[#11111180]">
+                You purchase the Product
+              </p>
               <button
                 id="homeButton"
-                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                class="bg-[#E527B2] font-semibold text-white text-2xl py-2 rounded-lg w-1/2"
               >
                 Home
               </button>
