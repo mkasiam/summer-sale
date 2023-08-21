@@ -52,7 +52,8 @@ function handleClick(target) {
       const discountedPriceTwoDigit = discountedPrice.toFixed(2);
       document.getElementById("discount").innerText = discountedPriceTwoDigit;
       const grandTotal = total - parseFloat(discountedPriceTwoDigit);
-      document.getElementById("grand-total").innerText = grandTotal;
+      const grandTotalTwoDigit = grandTotal.toFixed(2);
+      document.getElementById("grand-total").innerText = grandTotalTwoDigit;
     }
   });
 }
