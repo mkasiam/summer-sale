@@ -17,7 +17,7 @@ function handleClick(target) {
   p.innerText = `${count + 1}.  ${itemName} ${price}`;
   //Appending the child inside the element
   selectedItemContainer.appendChild(p);
-  //Calculating the total price 
+  //Calculating the total price
   total = parseInt(total) + parseInt(price);
   //Showing total price in to the total price text using innerText
   document.getElementById("total-price").innerText = total;
@@ -33,6 +33,15 @@ function handleClick(target) {
   } else {
     applyButton.disabled = true;
   }
+  //Finding the purchase button id and assigning it into a const
+  const purchaseButton = document.getElementById("purchase-btn");
+  // Purchase button enable logic
+  if (cartTotal > 0) {
+    purchaseButton.removeAttribute("disabled");
+  } else {
+    purchaseButton.setAttribute("disabled", "true");
+  }
+
   // Event listener for apply button click
   applyButton.addEventListener("click", function () {
     const couponCode = couponCodeInput.value;
@@ -61,10 +70,5 @@ purchaseButton.addEventListener("click", function () {
 // Reset modal content on Home button click
 homeButton.addEventListener("click", function () {
   modal.classList.add("hidden");
-  document.getElementById("selected-products").innerText= " ";
-  document.getElementById("total-price").innerText = 0;
-  document.getElementById("discount").innerText = 0;
-  document.getElementById("grand-total").innerText = 0;
-  document.getElementById("coupon-code").value = "";
-
+  window.location.href = "index.html";
 });
