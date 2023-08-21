@@ -1,4 +1,5 @@
 let total = 0;
+
 // Adding the selected items in the cart
 function handleCLik(target) {
   const selectedItemContainer = document.getElementById("selected-products");
@@ -31,6 +32,7 @@ function handleCLik(target) {
     }
   });
 }
+
 const purchaseButton = document.getElementById("purchaseButton");
 const modal = document.getElementById("modal");
 const homeButton = document.getElementById("homeButton");
