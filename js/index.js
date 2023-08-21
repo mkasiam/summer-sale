@@ -19,14 +19,15 @@ function handleClick(target) {
   selectedItemContainer.appendChild(p);
   //Calculating the total price
   total = parseInt(total) + parseInt(price);
+  const totalPrice =total.toFixed(2);
   //Showing total price in to the total price text using innerText
-  document.getElementById("total-price").innerText = total;
+  document.getElementById("total-price").innerText = totalPrice;
   //Finding and declaring the coupon code
   const couponCodeInput = document.getElementById("coupon-code");
   //Finding and declaring the coupon code apply button
   const applyButton = document.getElementById("apply-button");
   //Assigning that cartTotal is total
-  const cartTotal = total;
+  const cartTotal = totalPrice;
   // Adding Condition When the button will be enable or disable
   if (cartTotal >= 200) {
     applyButton.disabled = false;
