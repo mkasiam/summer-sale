@@ -65,6 +65,6 @@ homeButton.addEventListener("click", function () {
   document.getElementById("total-price").innerText = 0;
   document.getElementById("discount").innerText = 0;
   document.getElementById("grand-total").innerText = 0;
-  document.getElementById("coupon-code").value = " ";
+  document.getElementById("coupon-code").value = "";
 
 });
