@@ -49,8 +49,9 @@ function handleClick(target) {
     if (couponCode === "SELL200") {
       // Apply the 20% discount
       const discountedPrice = cartTotal * 0.2; // 20% discount
-      document.getElementById("discount").innerText = discountedPrice;
-      const grandTotal = total - parseFloat(discountedPrice);
+      const discountedPriceTwoDigit = discountedPrice.toFixed(2);
+      document.getElementById("discount").innerText = discountedPriceTwoDigit;
+      const grandTotal = total - parseFloat(discountedPriceTwoDigit);
       document.getElementById("grand-total").innerText = grandTotal;
     }
   });
